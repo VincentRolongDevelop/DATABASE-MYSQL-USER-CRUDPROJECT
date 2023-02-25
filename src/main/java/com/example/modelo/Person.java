@@ -1,22 +1,51 @@
 package com.example.modelo;
 
+//import lombok.Getter;
+//import lombok.NoArgsConstructor;
+//import lombok.Setter;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/*
+@Entity
+@Table(name = "persons")
+@NoArgsConstructor
+@Getter
+@Setter
+public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+	private String name;
+	private String phoneNum;
+    
+}
+*/
+
+
 @Entity
 @Table(name="person")
 public class Person {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String phoneNum;
 
 	public Person() {
 	
+	}
+	
+	public Person(int id, String name, String phoneNum) {
+		super();
+		this.id=id;
+		this.name=name;
+		this.phoneNum = phoneNum;
+		
 	}
 
 	public int getId() {
@@ -44,3 +73,4 @@ public class Person {
 	}
 	
 }
+

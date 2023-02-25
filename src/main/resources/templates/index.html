@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" href="../static/bootstrap.css"/>
+	<script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+ 	<script th:src="@{/js/bootstrap.js}"src="../static/js/bootstrap.js"></script>
     <title>CRUD USER</title>
 </head>
 <body>
     <h1>Hello user</h1>
+    <label for="Id">Id : </label></br>
+    <input type="number" id="Vid"/></br>
+
+    <label for="Name">Name : </label></br>
+    <input type="text" id="Vname"/></br>
+
+    <label for="PhoneNum">Phone Number : </label></br>
+    <input type="text" id="Vnumber"/></br>
+    <button type=""submit>Submit</button>
+    </br>
+    </br>
+    <div class="container mt-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>PHONE NUM</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="person:${persons}">
+                    <td th:text=${person.id}></td>
+                    <td th:text=${person.name}></td>
+                    <td th:text=${person.phoneNum}></td>
+                    <td></td>
+                    <a class="btn btn-warning">Edit</a>
+                    <a class="btn btn-danger">Delete</a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>  

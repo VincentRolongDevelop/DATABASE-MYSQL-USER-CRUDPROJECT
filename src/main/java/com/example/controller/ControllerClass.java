@@ -1,6 +1,5 @@
 package com.example.controller;
 
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +18,6 @@ public class ControllerClass {
 	
 	@GetMapping("/list")
 	public String list(Model model) {
-		
 		List<Person>persons=service.list();
 		model.addAttribute("persons",persons);
 		return "index";
