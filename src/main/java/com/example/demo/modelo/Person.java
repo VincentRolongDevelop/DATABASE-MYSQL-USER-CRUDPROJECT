@@ -1,4 +1,4 @@
-package com.example.modelo;
+package com.example.demo.modelo;
 
 //import lombok.Getter;
 //import lombok.NoArgsConstructor;
@@ -28,7 +28,7 @@ public class Person {
 
 
 @Entity
-@Table(name="person")
+@Table(name="persons")
 public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

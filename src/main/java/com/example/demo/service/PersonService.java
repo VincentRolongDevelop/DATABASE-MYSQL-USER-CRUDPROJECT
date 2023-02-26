@@ -1,5 +1,5 @@
 
-package com.example.service;
+package com.example.demo.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,9 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.interfaceServices.IpersonService;
-import com.example.interfaces.IPerson;
-import com.example.modelo.Person;
+import com.example.demo.interfaceServices.IpersonService;
+import com.example.demo.interfaces.IPerson;
+import com.example.demo.modelo.Person;
 
 @Service
 public class PersonService implements IpersonService {
@@ -18,8 +18,9 @@ public class PersonService implements IpersonService {
 	private IPerson data;
 	
 	@Override
-	public List<Person> list() {
-		return (List<Person >)data.findAll();
+	public List<Person> listar() {
+		System.out.println(data.findAll());
+		return (List<Person>)data.findAll();
 	}
 
 	@Override
