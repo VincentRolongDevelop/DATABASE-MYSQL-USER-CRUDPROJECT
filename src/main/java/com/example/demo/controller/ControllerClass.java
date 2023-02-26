@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.interfaceServices.IpersonService;
 import com.example.demo.modelo.Person;
@@ -30,8 +31,9 @@ public class ControllerClass {
 	public String addNew(Model model) {
 		model.addAttribute("person",new Person());
 		return "form";
-	}
+	}      
 	
+	@PostMapping("/save")
 	public String save(@Valid Person p, Model model) {
 		service.save(p);
 		return "redirect:/listar";
