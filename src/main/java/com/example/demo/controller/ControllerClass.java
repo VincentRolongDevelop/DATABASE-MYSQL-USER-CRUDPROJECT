@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.interfaceServices.IpersonService;
 import com.example.demo.modelo.Person;
 
+import jakarta.validation.Valid;
+
 @Controller
 @RequestMapping
 public class ControllerClass {
@@ -22,6 +24,17 @@ public class ControllerClass {
 	    model.addAttribute("persons",persons);
 		return "index";
 		
+	}
+	
+	@GetMapping("/new")
+	public String addNew(Model model) {
+		model.addAttribute("person",new Person());
+		return "form";
+	}
+	
+	public String save(@Valid Person p, Model model) {
+		service.save(p);
+		return "redirect:/listar";
 	}
 
 }

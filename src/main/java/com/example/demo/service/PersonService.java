@@ -30,8 +30,12 @@ public class PersonService implements IpersonService {
 
 	@Override
 	public int save(Person p) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res=0;
+		Person person = data.save(p);
+		if(!person.equals(null)) {
+			res=1;
+		}
+		return res;
 	}
 
 	@Override
