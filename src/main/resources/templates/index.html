@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>Hello user</h1>
+    
+    <!--New user formulary-->
     <label for="Id">Id : </label></br>
     <input type="number" id="Vid"/></br>
 
@@ -19,6 +21,8 @@
     <button type=""submit>Submit</button>
     </br>
     </br>
+    
+    <!--Table to show the mysql data-->
     <div class="container mt-4">
         <table class="table">
             <thead>
@@ -34,8 +38,10 @@
                     <td th:text=${person.id}></td>
                     <td th:text=${person.name}></td>
                     <td th:text=${person.phoneNum}></td>
+                    <td>
                     <a class="btn btn-warning">Edit</a>
                     <a class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

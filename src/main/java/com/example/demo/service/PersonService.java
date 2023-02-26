@@ -19,7 +19,6 @@ public class PersonService implements IpersonService {
 	
 	@Override
 	public List<Person> listar() {
-		System.out.println(data.findAll());
 		return (List<Person>)data.findAll();
 	}
 

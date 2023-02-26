@@ -37,7 +37,7 @@ public class Person {
 	private String phoneNum;
 
 	public Person() {
-	
+		
 	}
 	
 	public Person(int id, String name, String phoneNum) {

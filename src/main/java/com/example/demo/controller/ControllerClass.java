@@ -11,7 +11,6 @@ import com.example.demo.modelo.Person;
 
 @Controller
 @RequestMapping
-
 public class ControllerClass {
 	
 	@Autowired
