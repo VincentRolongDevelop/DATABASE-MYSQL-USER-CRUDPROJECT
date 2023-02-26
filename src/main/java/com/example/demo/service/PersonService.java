@@ -1,4 +1,3 @@
-
 package com.example.demo.service;
 
 import java.util.List;
@@ -41,8 +40,6 @@ public class PersonService implements IpersonService {
 	@Override
 	public void delete(int id) {
 		data.deleteById(id);
-		
-		
 	}
 
 }
