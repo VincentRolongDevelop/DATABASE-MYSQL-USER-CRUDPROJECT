@@ -48,5 +48,12 @@ public class ControllerClass {
 		model.addAttribute("person",person);
 		return "form";
 	}
+	
+	@GetMapping("/delete/{id}")
+	public String delete(Model model, @PathVariable int id) {
+		service.delete(id);
+		return "redirect:/listar";
+		
+	}
 
 }
