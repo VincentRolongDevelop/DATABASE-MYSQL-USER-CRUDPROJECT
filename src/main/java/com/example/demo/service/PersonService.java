@@ -24,8 +24,8 @@ public class PersonService implements IpersonService {
 
 	@Override
 	public Optional<Person> listId(int id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+		
+		return data.findById(id);
 	}
 
 	@Override

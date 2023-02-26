@@ -1,10 +1,13 @@
 package com.example.demo.controller;
 
 import java.util.List;
+
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.interfaceServices.IpersonService;
@@ -37,6 +40,13 @@ public class ControllerClass {
 	public String save(@Valid Person p, Model model) {
 		service.save(p);
 		return "redirect:/listar";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable int id,Model model) {
+		Optional<Person>person=service.listId(id);
+		model.addAttribute("person",person);
+		return "form";
 	}
 
 }
